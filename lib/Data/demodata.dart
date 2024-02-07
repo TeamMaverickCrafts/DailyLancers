@@ -5,6 +5,8 @@ List<Map<String, dynamic>> demoData = [
     'image': 'assets/Components/taj.png',
     'title': 'Chef-Chinese',
     'location': 'Taj Hotel . Mumbai',
+    'hotelname' : 'Taj Hotel',
+    'state' : 'Mumbai',
     'bookmarkIcon': Icons.bookmark_border_rounded,
     'dateIcon': 'assets/Components/regis.svg',
     'dateText': '04/05',
@@ -24,7 +26,8 @@ List<Map<String, dynamic>> demoData = [
   {
     'image': 'assets/Components/klm.png',
     'title': 'Waiter',
-    'location': 'KLM Hotel . Dehradun',
+    'location': 'KLM Hotel . Dehradun','hotelname' : 'Taj Hotel',
+    'state' : 'Mumbai',
     'bookmarkIcon': Icons.bookmark_border_rounded,
     'dateIcon': 'assets/Components/regis.svg',
     'dateText': '02/15',
@@ -44,7 +47,8 @@ List<Map<String, dynamic>> demoData = [
   {
     'image': 'assets/Components/taj.png',
     'title': 'Chef-Chinese',
-    'location': 'Taj Hotel . Mumbai',
+    'location': 'Taj Hotel . Mumbai','hotelname' : 'Taj Hotel',
+    'state' : 'Mumbai',
     'bookmarkIcon': Icons.bookmark_border_rounded,
     'dateIcon': 'assets/Components/regis.svg',
     'dateText': '04/05',

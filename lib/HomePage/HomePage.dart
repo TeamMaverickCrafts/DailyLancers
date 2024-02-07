@@ -1,5 +1,5 @@
 import 'package:daily_lancers/Data/demodata.dart';
-import 'package:daily_lancers/HomePage/Components/Categories.dart';
+import 'package:daily_lancers/HomePage/JobDescription/Job_Description.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -13,6 +13,7 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
+    // make scrolling interactive
     return Scaffold(
       backgroundColor: const Color(0xFFF9F9F9),
       body: Column(
@@ -175,7 +176,7 @@ class _HomepageState extends State<Homepage> {
           Padding(
             padding: EdgeInsets.only(
               left: MediaQuery.of(context).size.width * 0.07,
-              top: MediaQuery.of(context).size.height * 0.04,
+              top: MediaQuery.of(context).size.height * 0.03,
             ),
             child: const Row(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -395,6 +396,26 @@ class _HomepageState extends State<Homepage> {
               ),
             ),
           ),
+          Padding(
+            padding: EdgeInsets.only(
+              left: MediaQuery.of(context).size.width * 0.07,
+              top: MediaQuery.of(context).size.height * 0.03,
+            ),
+            child: const Row(
+              children: [
+                Text(
+                  "Recent Job List",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontFamily: "RobotoBold",
+                    height: 1.0,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          //Remove gap
           Expanded(
             child: ListView.builder(
               physics: const BouncingScrollPhysics(),
@@ -410,212 +431,223 @@ class _HomepageState extends State<Homepage> {
   }
 
   Widget buildItem(int index) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 18.0),
-      child: Container(
-        height: MediaQuery.of(context).size.height * 0.22,
-        width: MediaQuery.of(context).size.width * 0.9,
-        margin: const EdgeInsets.symmetric(vertical: 10),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(20),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.02),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
-        child: Stack(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 20, left: 20, right: 10),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          Image.asset(demoData[index]['image']),
-                          const SizedBox(width: 20),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                demoData[index]['title'],
-                                style: const TextStyle(
-                                  color: Color(0xff150B3D),
-                                  fontSize: 14,
-                                  fontFamily: "RobotoBold",
-                                  height: 1.0,
-                                ),
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                demoData[index]['location'],
-                                style: const TextStyle(
-                                    color: Color(0xff524B6B),
-                                    fontSize: 12,
-                                    fontFamily: "RobotoRegular",
-                                    height: 1.0),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            demoData[index]['isChecked'] =
-                                !(demoData[index]['isChecked'] ?? false);
-                          });
-                        },
-                        child: Icon(
-                          demoData[index]['isChecked'] == true
-                              ? Icons.bookmark_rounded
-                              : Icons.bookmark_border_rounded,
-                          color: const Color(0xff524B6B),
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  //main row
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(demoData[index]['dateIcon']),
-                              const SizedBox(width: 10),
-                              Text(
-                                demoData[index]['dateText'],
-                                style: const TextStyle(
-                                    color: Color(0xff524B6B),
-                                    fontSize: 12,
-                                    fontFamily: "RobotoRegular",
-                                    height: 1.0),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-                          Row(
-                            children: [
-                              SvgPicture.asset(demoData[index]['clockIcon']),
-                              const SizedBox(width: 10),
-                              Text(
-                                demoData[index]['clockText'],
-                                style: const TextStyle(
-                                    color: Color(0xff524B6B),
-                                    fontSize: 12,
-                                    fontFamily: "RobotoRegular",
-                                    height: 1.0),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              SvgPicture.asset(demoData[index]['calendarIcon']),
-                              const SizedBox(width: 10),
-                              Text(
-                                demoData[index]['calendarText'],
-                                style: const TextStyle(
-                                    color: Color(0xff524B6B),
-                                    fontSize: 12,
-                                    fontFamily: "RobotoRegular",
-                                    height: 1.0),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-                          Row(
-                            children: [
-                              SvgPicture.asset(demoData[index]['taxiIcon']),
-                              const SizedBox(width: 10),
-                              Text(
-                                demoData[index]['taxiText'],
-                                style: const TextStyle(
-                                    color: Color(0xff524B6B),
-                                    fontSize: 12,
-                                    fontFamily: "RobotoRegular",
-                                    height: 1.0),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 15),
-                ],
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ItemDetailsPage(index: index),
+          ),
+        );
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 18.0),
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.22,
+          width: MediaQuery.of(context).size.width * 0.9,
+          margin: const EdgeInsets.symmetric(vertical: 10),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.02),
+                spreadRadius: 2,
+                blurRadius: 5,
+                offset: const Offset(0, 3),
               ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                demoData[index]['bottomLeftIcon'] == 'hotel'
-                    ? SvgPicture.asset(demoData[index]['bottomLeftIcon'])
-                    : SvgPicture.asset(demoData[index]['bottomLeftIcon2']),
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.04,
-                  decoration: BoxDecoration(
-                    color: demoData[index]['status'] == 'hotel'
-                        ? const Color(0xff5A4D90)
-                        : const Color(0xff49B249),
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(20),
-                      bottomRight: Radius.circular(20),
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
+            ],
+          ),
+          child: Stack(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 20, left: 20, right: 10),
+                child: Column(
+                  children: [
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              SvgPicture.asset(demoData[index]['infoIcon']),
-                              const SizedBox(width: 15),
-                              Text(
-                                demoData[index]['categoryText'],
-                                style: const TextStyle(
-                                    color: Color(0xffFFFFFF),
-                                    fontSize: 12,
+                          children: [
+                            Image.asset(demoData[index]['image']),
+                            const SizedBox(width: 20),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  demoData[index]['title'],
+                                  style: const TextStyle(
+                                    color: Color(0xff150B3D),
+                                    fontSize: 14,
                                     fontFamily: "RobotoBold",
-                                    height: 1.0),
-                              )
-                            ]),
-                        Text(
-                          demoData[index]['priceText'],
-                          style: const TextStyle(
-                              color: Color(0xffFFFFFF),
-                              fontSize: 14,
-                              fontFamily: "RobotoBold",
-                              height: 1.0),
+                                    height: 1.0,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5.0,
+                                ),
+                                Text(
+                                  demoData[index]['location'],
+                                  style: const TextStyle(
+                                      color: Color(0xff524B6B),
+                                      fontSize: 12,
+                                      fontFamily: "RobotoRegular",
+                                      height: 1.0),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              demoData[index]['isChecked'] =
+                                  !(demoData[index]['isChecked'] ?? false);
+                            });
+                          },
+                          child: Icon(
+                            demoData[index]['isChecked'] == true
+                                ? Icons.bookmark_rounded
+                                : Icons.bookmark_border_rounded,
+                            color: const Color(0xff524B6B),
+                          ),
                         )
                       ],
                     ),
-                  ),
-                )
-              ],
-            )
-          ],
+                    const SizedBox(height: 10),
+                    //main row
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(demoData[index]['dateIcon']),
+                                const SizedBox(width: 10),
+                                Text(
+                                  demoData[index]['dateText'],
+                                  style: const TextStyle(
+                                      color: Color(0xff524B6B),
+                                      fontSize: 12,
+                                      fontFamily: "RobotoRegular",
+                                      height: 1.0),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 12),
+                            Row(
+                              children: [
+                                SvgPicture.asset(demoData[index]['clockIcon']),
+                                const SizedBox(width: 10),
+                                Text(
+                                  demoData[index]['clockText'],
+                                  style: const TextStyle(
+                                      color: Color(0xff524B6B),
+                                      fontSize: 12,
+                                      fontFamily: "RobotoRegular",
+                                      height: 1.0),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                SvgPicture.asset(
+                                    demoData[index]['calendarIcon']),
+                                const SizedBox(width: 10),
+                                Text(
+                                  demoData[index]['calendarText'],
+                                  style: const TextStyle(
+                                      color: Color(0xff524B6B),
+                                      fontSize: 12,
+                                      fontFamily: "RobotoRegular",
+                                      height: 1.0),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 12),
+                            Row(
+                              children: [
+                                SvgPicture.asset(demoData[index]['taxiIcon']),
+                                const SizedBox(width: 10),
+                                Text(
+                                  demoData[index]['taxiText'],
+                                  style: const TextStyle(
+                                      color: Color(0xff524B6B),
+                                      fontSize: 12,
+                                      fontFamily: "RobotoRegular",
+                                      height: 1.0),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 15),
+                  ],
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  demoData[index]['bottomLeftIcon'] == 'hotel'
+                      ? SvgPicture.asset(demoData[index]['bottomLeftIcon'])
+                      : SvgPicture.asset(demoData[index]['bottomLeftIcon2']),
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.04,
+                    decoration: BoxDecoration(
+                      color: demoData[index]['status'] == 'hotel'
+                          ? const Color(0xff5A4D90)
+                          : const Color(0xff49B249),
+                      borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(20),
+                        bottomRight: Radius.circular(20),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(demoData[index]['infoIcon']),
+                                const SizedBox(width: 15),
+                                Text(
+                                  demoData[index]['categoryText'],
+                                  style: const TextStyle(
+                                      color: Color(0xffFFFFFF),
+                                      fontSize: 12,
+                                      fontFamily: "RobotoBold",
+                                      height: 1.0),
+                                )
+                              ]),
+                          Text(
+                            demoData[index]['priceText'],
+                            style: const TextStyle(
+                                color: Color(0xffFFFFFF),
+                                fontSize: 14,
+                                fontFamily: "RobotoBold",
+                                height: 1.0),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );
