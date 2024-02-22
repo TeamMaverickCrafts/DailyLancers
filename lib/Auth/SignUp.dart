@@ -1,7 +1,6 @@
 import 'package:daily_lancers/Auth/Login.dart';
+import 'package:daily_lancers/BotNav.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flutter_svg/svg.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -155,6 +154,57 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                 ),
+              ),const SizedBox(
+                height: 20,
+              ),
+              const Row(
+                children: [
+                  Text(
+                    "Phone Number * ",
+                    style: TextStyle(
+                      fontFamily: "RobotoBold",
+                      fontSize: 14,
+                      color: Color(0xff0d0140),
+                      height: 16 / 12,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xff99ABC6).withOpacity(0.18),
+                      spreadRadius: 0,
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: const TextField(
+                  decoration: InputDecoration(
+                    hintText: '+91 ',
+                    hintStyle: TextStyle(
+                        fontFamily: "RobotoMedium",
+                        color: Colors.grey,
+                        fontSize: 14.0),
+                    labelStyle: TextStyle(color: Color(0xff6E678C)),
+                    filled: true,
+                    fillColor: Colors.white,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                ),
               ),
               const SizedBox(
                 height: 20,
@@ -262,32 +312,42 @@ class _SignupState extends State<Signup> {
               const SizedBox(
                 height: 25,
               ),
-              Container(
-                width: 266,
-                height: 50,
-                decoration: ShapeDecoration(
-                  color: const Color(0xFF130160),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(6)),
-                  shadows: [
-                    const BoxShadow(
-                      color: Color(0x2D99AAC5),
-                      blurRadius: 62,
-                      offset: Offset(0, 4),
-                      spreadRadius: 0,
-                    ),
-                  ],
-                ),
-                child: const Center(
-                  child: Text(
-                    'SIGN UP',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 14,
-                      fontFamily: 'RobotoBold',
-                      fontWeight: FontWeight.w700,
-                      height: 0,
-                      letterSpacing: 0.84,
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            const BotNav()), // Replace NextPage with your desired page
+                  );
+                },
+                child: Container(
+                  width: 266,
+                  height: 50,
+                  decoration: ShapeDecoration(
+                    color: const Color(0xFF130160),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(6)),
+                    shadows: [
+                      const BoxShadow(
+                        color: Color(0x2D99AAC5),
+                        blurRadius: 62,
+                        offset: Offset(0, 4),
+                        spreadRadius: 0,
+                      ),
+                    ],
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'SIGN UP',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                        fontFamily: 'RobotoBold',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                        letterSpacing: 0.84,
+                      ),
                     ),
                   ),
                 ),
@@ -332,14 +392,9 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     Positioned(
-                      left: 33.87,
-                      top: 15,
-                      child: SvgPicture.asset(
-                        "assets/Components/google.svg",
-                        width: 20,
-                        height: 20,
-                      ),
-                    ),
+                        left: 33.87,
+                        top: 15,
+                        child: Image.asset('assets/google.png')),
                   ],
                 ),
               ),
@@ -354,7 +409,7 @@ class _SignupState extends State<Signup> {
                     style: TextStyle(
                       color: Color(0xFF514A6B),
                       fontSize: 12,
-                      fontFamily: 'RobotoRegular', 
+                      fontFamily: 'RobotoRegular',
                       height: 0,
                     ),
                   ),
@@ -372,7 +427,7 @@ class _SignupState extends State<Signup> {
                       style: TextStyle(
                         color: Color(0xFFFF9228),
                         fontSize: 12,
-                        fontFamily: 'RobotoRegular', 
+                        fontFamily: 'RobotoRegular',
                         decoration: TextDecoration.underline,
                         decorationColor: Color(0xFFFF9228),
                         height: 0,

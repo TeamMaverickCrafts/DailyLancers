@@ -1,6 +1,7 @@
-import 'package:daily_lancers/Auth/Login.dart';
 import 'package:daily_lancers/Auth/SignUp.dart';
+import 'package:daily_lancers/Auth/forgot.dart';
 import 'package:daily_lancers/HomePage/HomePage.dart';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_svg/svg.dart';
@@ -33,7 +34,7 @@ class _LoginState extends State<Login> {
                 "Welcome Back",
                 style: TextStyle(
                   fontFamily: "RobotoBold",
-                  fontSize: 30, 
+                  fontSize: 30,
                   color: Color(0xff0d0140),
                   height: 39 / 30,
                 ),
@@ -47,7 +48,7 @@ class _LoginState extends State<Login> {
                 style: TextStyle(
                   fontFamily: "RobotoMedium",
                   fontSize: 13,
-                  height: 1.4, 
+                  height: 1.4,
                   color: Color(0xff514a6b),
                 ),
                 textAlign: TextAlign.center,
@@ -64,10 +65,10 @@ class _LoginState extends State<Login> {
               const Row(
                 children: [
                   Text(
-                    "Email",
+                    "Phone Number",
                     style: TextStyle(
                       fontFamily: "RobotoBold",
-                      fontSize: 14, 
+                      fontSize: 14,
                       color: Color(0xff0d0140),
                       height: 16 / 12,
                     ),
@@ -91,12 +92,11 @@ class _LoginState extends State<Login> {
                 ),
                 child: const TextField(
                   decoration: InputDecoration(
-                    hintText: 'Enter your email ID',
+                    hintText: '+91-1234567890',
                     hintStyle: TextStyle(
-                      fontFamily: "RobotoMedium",
-                      color: Colors.grey,
-                      fontSize: 14.0
-                    ),
+                        fontFamily: "RobotoMedium",
+                        color: Colors.grey,
+                        fontSize: 14.0),
                     labelStyle: TextStyle(color: Color(0xff6E678C)),
                     filled: true,
                     fillColor: Colors.white,
@@ -120,7 +120,7 @@ class _LoginState extends State<Login> {
                     "Password",
                     style: TextStyle(
                       fontFamily: "RobotoBold",
-                      fontSize: 14, 
+                      fontSize: 14,
                       color: Color(0xff0d0140),
                       height: 16 / 12,
                     ),
@@ -147,10 +147,9 @@ class _LoginState extends State<Login> {
                   decoration: InputDecoration(
                     hintText: 'Enter Password',
                     hintStyle: const TextStyle(
-                      fontFamily: "RobotoMedium",
-                      color: Colors.grey,
-                      fontSize: 14.0
-                    ),
+                        fontFamily: "RobotoMedium",
+                        color: Colors.grey,
+                        fontSize: 14.0),
                     labelStyle: const TextStyle(color: Color(0xff6E678C)),
                     filled: true,
                     suffixIcon: GestureDetector(
@@ -219,15 +218,25 @@ class _LoginState extends State<Login> {
                     )
                   ],
                 ),
-                const Text(
-                  "Forgot Password ?",
-                  style: TextStyle(
-                    fontFamily: "RobotoRegular",
-                    fontSize: 12, 
-                    color: Color(0xff0d0140),
-                    height: 16 / 12,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const forgot()), // Replace SecondPage with the actual widget representing the second page
+                    );
+                  },
+                  child: const Text(
+                    "Forgot Password ?",
+                    style: TextStyle(
+                      fontFamily: "RobotoRegular",
+                      fontSize: 12,
+                      color: Color(0xff0d0140),
+                      height: 16 / 12,
+                    ),
+                    textAlign: TextAlign.left,
                   ),
-                  textAlign: TextAlign.left,
                 )
               ]),
               const SizedBox(
@@ -235,13 +244,13 @@ class _LoginState extends State<Login> {
               ),
               GestureDetector(
                 onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                const Homepage()), // Replace SecondPage with the actual widget representing the second page
-                      );
-                    },
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            Home()), // Replace SecondPage with the actual widget representing the second page
+                  );
+                },
                 child: Container(
                   width: 266,
                   height: 50,
@@ -317,7 +326,8 @@ class _LoginState extends State<Login> {
                       top: 15,
                       child: SvgPicture.asset(
                         "assets/Components/google.svg",
-                        width: 20,height: 20,
+                        width: 20,
+                        height: 20,
                       ),
                     ),
                   ],

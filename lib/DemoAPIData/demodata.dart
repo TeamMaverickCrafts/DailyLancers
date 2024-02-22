@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 List<Map<String, dynamic>> demoData = [
   {
+    'main-location': 'Apollo Bunder, Mumbai, Maharashtra, 400 001, India',
     'image': 'assets/Components/taj.png',
     'title': 'Chef-Chinese',
     'location': 'Taj Hotel . Mumbai',
-    'hotelname' : 'Taj Hotel',
-    'state' : 'Mumbai',
+    'hotelname': 'Taj Hotel',
+    'state': 'Mumbai',
     'bookmarkIcon': Icons.bookmark_border_rounded,
     'dateIcon': 'assets/Components/regis.svg',
     'dateText': '04/05',
@@ -21,13 +22,17 @@ List<Map<String, dynamic>> demoData = [
     'infoIcon': 'assets/Components/icon.svg',
     'categoryText': 'By Hotel',
     'priceText': '₹2K/Hr',
-    'status': 'hotel'
+    'status': 'hotel',
+    'jobdesc':
+        "Chef responsibilities include studying recipes, setting up menus and preparing high-quality dishes. You should be able to delegate tasks to kitchen staff to ensure meals are prepared in a timely manner. Also, you should be familiar with sanitation regulations."
   },
   {
+    'main-location': 'Apollo Bunder, Mumbai, Maharashtra, 400 001, India',
     'image': 'assets/Components/klm.png',
     'title': 'Waiter',
-    'location': 'KLM Hotel . Dehradun','hotelname' : 'Taj Hotel',
-    'state' : 'Mumbai',
+    'location': 'KLM Hotel . Dehradun',
+    'hotelname': 'Taj Hotel',
+    'state': 'Mumbai',
     'bookmarkIcon': Icons.bookmark_border_rounded,
     'dateIcon': 'assets/Components/regis.svg',
     'dateText': '02/15',
@@ -42,13 +47,17 @@ List<Map<String, dynamic>> demoData = [
     'infoIcon': 'assets/Components/icon.svg',
     'categoryText': 'By Hotel',
     'priceText': '₹2K/Hr',
-    'status': 'other'
+    'status': 'other',
+    'jobdesc':
+        "Chef responsibilities include studying recipes, setting up menus and preparing high-quality dishes. You should be able to delegate tasks to kitchen staff to ensure meals are prepared in a timely manner. Also, you should be familiar with sanitation regulations."
   },
   {
+    'main-location': 'Apollo Bunder, Mumbai, Maharashtra, 400 001, India',
     'image': 'assets/Components/taj.png',
     'title': 'Chef-Chinese',
-    'location': 'Taj Hotel . Mumbai','hotelname' : 'Taj Hotel',
-    'state' : 'Mumbai',
+    'location': 'Taj Hotel . Mumbai',
+    'hotelname': 'Taj Hotel',
+    'state': 'Mumbai',
     'bookmarkIcon': Icons.bookmark_border_rounded,
     'dateIcon': 'assets/Components/regis.svg',
     'dateText': '04/05',
@@ -63,6 +72,8 @@ List<Map<String, dynamic>> demoData = [
     'infoIcon': 'assets/Components/icon.svg',
     'categoryText': 'By Hotel',
     'priceText': '₹2K/Hr',
-    'status': 'hotel'
+    'status': 'hotel',
+    'jobdesc':
+        'Chef responsibilities include studying recipes, setting up menus and preparing high-quality dishes. You should be able to delegate tasks to kitchen staff to ensure meals are prepared in a timely manner. Also, you should be familiar with sanitation regulations.'
   },
 ];

@@ -1,4 +1,3 @@
-import 'package:daily_lancers/Auth/Login.dart';
 import 'package:daily_lancers/Auth/SignUp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -168,7 +167,7 @@ class _BoardingState extends State<Boarding> with TickerProviderStateMixin {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const Login(),
+                            builder: (context) => const Signup(),
                           ),
                         );
                       },
@@ -179,7 +178,7 @@ class _BoardingState extends State<Boarding> with TickerProviderStateMixin {
                           color: const Color(0xFF130160),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
-                          ), 
+                          ),
                         ),
                         child: const Center(
                           child: Row(
