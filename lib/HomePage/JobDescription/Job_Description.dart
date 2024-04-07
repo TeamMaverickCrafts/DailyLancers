@@ -178,7 +178,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                                   },
                                   style: ElevatedButton.styleFrom(
                                     elevation: 0,
-                                    primary: const Color(0xFF130160),
+                                    backgroundColor: const Color(0xFF130160),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
@@ -204,7 +204,7 @@ class _ItemDetailsPageState extends State<ItemDetailsPage> {
                                   },
                                   style: ElevatedButton.styleFrom(
                                     elevation: 0,
-                                    primary: const Color(0xFFFFE1D5),
+                                    backgroundColor: const Color(0xFFFFE1D5),
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
@@ -507,13 +507,15 @@ class _BottomRowState extends State<BottomRow> {
                   },
                   style: ElevatedButton.styleFrom(
                     elevation: 0,
-                    primary: const Color(0xFFFFD6AD), // Background color
+                    backgroundColor:
+                        const Color(0xFFFFD6AD), // Background color
                     minimumSize: Size(
                       MediaQuery.of(context).size.height * 0.5,
                       56,
                     ), // Set the width and height
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8), // Adjust the radius as needed
+                      borderRadius: BorderRadius.circular(
+                          8), // Adjust the radius as needed
                     ),
                   ),
                   child: const Text(
@@ -561,7 +563,7 @@ class _BottomRowState extends State<BottomRow> {
             },
             style: ElevatedButton.styleFrom(
               elevation: 0,
-              primary: const Color(0xFFFFD6AD), // Background color
+              backgroundColor: const Color(0xFFFFD6AD), // Background color
               minimumSize: Size(MediaQuery.of(context).size.height * 0.32,
                   56), // Set the width and height
               shape: RoundedRectangleBorder(

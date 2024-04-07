@@ -1,15 +1,19 @@
-import 'package:daily_lancers/Auth/Login.dart';
-import 'package:daily_lancers/BotNav.dart';
+import 'package:daily_lancers/Auth/SignUp.dart';
+import 'package:daily_lancers/Auth/forgot.dart';
+import 'package:daily_lancers/HomePage/HomePage.dart';
+
 import 'package:flutter/material.dart';
 
-class Signup extends StatefulWidget {
-  const Signup({super.key});
+import 'package:flutter_svg/svg.dart';
+
+class JpLogin extends StatefulWidget {
+  const JpLogin({super.key});
 
   @override
-  State<Signup> createState() => _SignupState();
+  State<JpLogin> createState() => _JpLoginState();
 }
 
-class _SignupState extends State<Signup> {
+class _JpLoginState extends State<JpLogin> {
   bool _isObscured = true;
   bool _isColorChanged = false;
   @override
@@ -24,10 +28,10 @@ class _SignupState extends State<Signup> {
           child: SingleChildScrollView(
             child: Column(children: [
               const SizedBox(
-                height: 10,
+                height: 80,
               ),
               const Text(
-                "Create an Account",
+                "Welcome Back",
                 style: TextStyle(
                   fontFamily: "RobotoBold",
                   fontSize: 30,
@@ -40,12 +44,11 @@ class _SignupState extends State<Signup> {
                 height: 10,
               ),
               const Text(
-                "Unlock exclusive benefits and a personalized experience by creating your unique account today!",
+                "Welcome back! It\'s a pleasure to see you again. We hope you \nhave a wonderful experience with us!",
                 style: TextStyle(
                   fontFamily: "RobotoMedium",
-                  fontSize: 12,
-                  // height: 0.9,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 13,
+                  height: 1.4,
                   color: Color(0xff514a6b),
                 ),
                 textAlign: TextAlign.center,
@@ -53,55 +56,8 @@ class _SignupState extends State<Signup> {
               const SizedBox(
                 height: 60,
               ),
-              const Row(
-                children: [
-                  Text(
-                    "Full name",
-                    style: TextStyle(
-                      fontFamily: "RobotoBold",
-                      fontSize: 14,
-                      color: Color(0xff0d0140),
-                      height: 16 / 12,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ],
-              ),
               const SizedBox(
                 height: 8,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xff99ABC6)
-                          .withOpacity(0.18), // Set the shadow color
-                      spreadRadius: 0, // Set the spread radius
-                      blurRadius: 62, // Set the blur radius
-                      offset: const Offset(0, 4), // Set the shadow offset
-                    ),
-                  ],
-                ),
-                child: const TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Hrithik Chauhan',
-                    hintStyle: TextStyle(
-                        fontFamily: "RobotoMedium",
-                        color: Colors.grey,
-                        fontSize: 14.0),
-                    labelStyle: TextStyle(color: Color(0xff6E678C)),
-                    filled: true,
-                    fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                  ),
-                ),
               ),
               const SizedBox(
                 height: 20,
@@ -109,7 +65,7 @@ class _SignupState extends State<Signup> {
               const Row(
                 children: [
                   Text(
-                    "Email",
+                    "Phone Number",
                     style: TextStyle(
                       fontFamily: "RobotoBold",
                       fontSize: 14,
@@ -136,59 +92,7 @@ class _SignupState extends State<Signup> {
                 ),
                 child: const TextField(
                   decoration: InputDecoration(
-                    hintText: 'maverickcrafts0@gmail.com',
-                    hintStyle: TextStyle(
-                        fontFamily: "RobotoMedium",
-                        color: Colors.grey,
-                        fontSize: 14.0),
-                    labelStyle: TextStyle(color: Color(0xff6E678C)),
-                    filled: true,
-                    fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Row(
-                children: [
-                  Text(
-                    "Phone Number * ",
-                    style: TextStyle(
-                      fontFamily: "RobotoBold",
-                      fontSize: 14,
-                      color: Color(0xff0d0140),
-                      height: 16 / 12,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xff99ABC6).withOpacity(0.18),
-                      spreadRadius: 0,
-                      blurRadius: 10,
-                      offset: const Offset(0, 4),
-                    ),
-                  ],
-                ),
-                child: const TextField(
-                  decoration: InputDecoration(
-                    hintText: '+91 ',
+                    hintText: '+91-1234567890',
                     hintStyle: TextStyle(
                         fontFamily: "RobotoMedium",
                         color: Colors.grey,
@@ -241,7 +145,7 @@ class _SignupState extends State<Signup> {
                 child: TextField(
                   obscureText: _isObscured,
                   decoration: InputDecoration(
-                    hintText: 'maverickcrafts0',
+                    hintText: 'Enter Password',
                     hintStyle: const TextStyle(
                         fontFamily: "RobotoMedium",
                         color: Colors.grey,
@@ -276,38 +180,63 @@ class _SignupState extends State<Signup> {
               const SizedBox(
                 height: 25,
               ),
-              Row(children: [
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          // Toggle between two colors
+                          _isColorChanged = !_isColorChanged;
+                        });
+                      },
+                      child: Container(
+                        height: 24,
+                        width: 24,
+                        decoration: BoxDecoration(
+                          color: _isColorChanged
+                              ? const Color(0xffFFD6AD)
+                              : const Color.fromARGB(65, 170, 166, 185),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(5)),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    const Text(
+                      "Remember me",
+                      style: TextStyle(
+                        fontFamily: "RobotoRegular",
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xffaaa6b9),
+                        height: 16 / 12,
+                      ),
+                      textAlign: TextAlign.left,
+                    )
+                  ],
+                ),
                 GestureDetector(
                   onTap: () {
-                    setState(() {
-                      // Toggle between two colors
-                      _isColorChanged = !_isColorChanged;
-                    });
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const forgot()), // Replace SecondPage with the actual widget representing the second page
+                    );
                   },
-                  child: Container(
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      color: _isColorChanged
-                          ? const Color(0xffFFD6AD)
-                          : Color.fromARGB(65, 170, 166, 185),
-                      borderRadius: const BorderRadius.all(Radius.circular(5)),
+                  child: const Text(
+                    "Forgot Password ?",
+                    style: TextStyle(
+                      fontFamily: "RobotoRegular",
+                      fontSize: 12,
+                      color: Color(0xff0d0140),
+                      height: 16 / 12,
                     ),
+                    textAlign: TextAlign.left,
                   ),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                const Text(
-                  "Remember me",
-                  style: TextStyle(
-                    fontFamily: "RobotoRegular",
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xffaaa6b9),
-                    height: 16 / 12,
-                  ),
-                  textAlign: TextAlign.left,
                 )
               ]),
               const SizedBox(
@@ -315,11 +244,11 @@ class _SignupState extends State<Signup> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            const BotNav()), // Replace NextPage with your desired page
+                            Home()), // Replace SecondPage with the actual widget representing the second page
                   );
                 },
                 child: Container(
@@ -340,7 +269,7 @@ class _SignupState extends State<Signup> {
                   ),
                   child: const Center(
                     child: Text(
-                      'SIGN UP',
+                      'LOGIN',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 14,
@@ -375,12 +304,12 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     const Positioned(
-                      left: 60,
+                      left: 65,
                       top: 17,
                       child: SizedBox(
                         width: 179,
                         child: Text(
-                          'SIGN UP WITH GOOGLE',
+                          'SIGN IN WITH GOOGLE',
                           style: TextStyle(
                             color: Color(0xFF130160),
                             fontSize: 14,
@@ -393,14 +322,19 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     Positioned(
-                        left: 33.87,
-                        top: 15,
-                        child: Image.asset('assets/google.png')),
+                      left: 33.87,
+                      top: 15,
+                      child: SvgPicture.asset(
+                        "assets/Components/google.svg",
+                        width: 20,
+                        height: 20,
+                      ),
+                    ),
                   ],
                 ),
               ),
               const SizedBox(
-                height: 10,
+                height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -411,6 +345,7 @@ class _SignupState extends State<Signup> {
                       color: Color(0xFF514A6B),
                       fontSize: 12,
                       fontFamily: 'RobotoRegular',
+                      fontWeight: FontWeight.w400,
                       height: 0,
                     ),
                   ),
@@ -420,15 +355,16 @@ class _SignupState extends State<Signup> {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                const Login()), // Replace SecondPage with the actual widget representing the second page
+                                const Signup()), // Replace SecondPage with the actual widget representing the second page
                       );
                     },
                     child: const Text(
-                      "Sign in",
+                      "Sign up",
                       style: TextStyle(
                         color: Color(0xFFFF9228),
                         fontSize: 12,
                         fontFamily: 'RobotoRegular',
+                        fontWeight: FontWeight.w400,
                         decoration: TextDecoration.underline,
                         decorationColor: Color(0xFFFF9228),
                         height: 0,

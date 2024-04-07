@@ -57,15 +57,15 @@ class _AppliedSuccessfulState extends State<AppliedSuccessful> {
             ElevatedButton(
               onPressed: () {
                 Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      Home()), // Replace SecondPage with the actual widget representing the second page
-            );
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          Home()), // Replace SecondPage with the actual widget representing the second page
+                );
               },
               style: ElevatedButton.styleFrom(
                 elevation: 0,
-                primary: const Color(0xFFFFD6AD), // Background color
+                backgroundColor: const Color(0xFFFFD6AD), // Background color
                 minimumSize: Size(MediaQuery.of(context).size.width * 0.8,
                     56), // Set the width and height
                 shape: RoundedRectangleBorder(
@@ -89,7 +89,7 @@ class _AppliedSuccessfulState extends State<AppliedSuccessful> {
               onPressed: () {},
               style: ElevatedButton.styleFrom(
                 elevation: 0,
-                primary: const Color(0xFF130160), // Background color
+                backgroundColor: const Color(0xFF130160), // Background color
                 minimumSize: Size(MediaQuery.of(context).size.width * 0.8,
                     56), // Set the width and height
                 shape: RoundedRectangleBorder(

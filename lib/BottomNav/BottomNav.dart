@@ -8,7 +8,7 @@ class HomeFeed extends StatefulWidget {
 
   @override
   State<HomeFeed> createState() => _HomeFeedState();
-} 
+}
 
 class _HomeFeedState extends State<HomeFeed> {
   int _currentIndex = 0;

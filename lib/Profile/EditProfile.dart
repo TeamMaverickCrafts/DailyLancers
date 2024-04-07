@@ -502,7 +502,7 @@ class _EditProfileState extends State<EditProfile> {
                       },
                       style: ElevatedButton.styleFrom(
                         elevation: 0,
-                        primary: const Color(0xFF130160),
+                        backgroundColor: const Color(0xFF130160),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8.0),
                         ),

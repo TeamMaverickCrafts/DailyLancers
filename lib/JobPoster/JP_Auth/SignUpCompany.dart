@@ -1,15 +1,20 @@
-import 'package:daily_lancers/Auth/Login.dart';
-import 'package:daily_lancers/BotNav.dart';
+import 'package:daily_lancers/Auth/SignUp.dart';
+import 'package:daily_lancers/Auth/forgot.dart';
+import 'package:daily_lancers/HomePage/HomePage.dart';
+import 'package:daily_lancers/JobPoster/JP_Auth/login.dart';
+
 import 'package:flutter/material.dart';
 
-class Signup extends StatefulWidget {
-  const Signup({super.key});
+import 'package:flutter_svg/svg.dart';
+
+class SignUpCompany extends StatefulWidget {
+  const SignUpCompany({super.key});
 
   @override
-  State<Signup> createState() => _SignupState();
+  State<SignUpCompany> createState() => _SignUpCompanyState();
 }
 
-class _SignupState extends State<Signup> {
+class _SignUpCompanyState extends State<SignUpCompany> {
   bool _isObscured = true;
   bool _isColorChanged = false;
   @override
@@ -24,10 +29,10 @@ class _SignupState extends State<Signup> {
           child: SingleChildScrollView(
             child: Column(children: [
               const SizedBox(
-                height: 10,
+                height: 80,
               ),
               const Text(
-                "Create an Account",
+                "Company Details",
                 style: TextStyle(
                   fontFamily: "RobotoBold",
                   fontSize: 30,
@@ -40,76 +45,22 @@ class _SignupState extends State<Signup> {
                 height: 10,
               ),
               const Text(
-                "Unlock exclusive benefits and a personalized experience by creating your unique account today!",
+                "Provide essential details to create your company profile for better visibility and credibility.",
                 style: TextStyle(
                   fontFamily: "RobotoMedium",
-                  fontSize: 12,
-                  // height: 0.9,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 13,
+                  height: 1.4,
                   color: Color(0xff514a6b),
                 ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(
-                height: 60,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
               const Row(
                 children: [
                   Text(
-                    "Full name",
-                    style: TextStyle(
-                      fontFamily: "RobotoBold",
-                      fontSize: 14,
-                      color: Color(0xff0d0140),
-                      height: 16 / 12,
-                    ),
-                    textAlign: TextAlign.left,
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xff99ABC6)
-                          .withOpacity(0.18), // Set the shadow color
-                      spreadRadius: 0, // Set the spread radius
-                      blurRadius: 62, // Set the blur radius
-                      offset: const Offset(0, 4), // Set the shadow offset
-                    ),
-                  ],
-                ),
-                child: const TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Hrithik Chauhan',
-                    hintStyle: TextStyle(
-                        fontFamily: "RobotoMedium",
-                        color: Colors.grey,
-                        fontSize: 14.0),
-                    labelStyle: TextStyle(color: Color(0xff6E678C)),
-                    filled: true,
-                    fillColor: Colors.white,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Row(
-                children: [
-                  Text(
-                    "Email",
+                    "Company Name",
                     style: TextStyle(
                       fontFamily: "RobotoBold",
                       fontSize: 14,
@@ -136,7 +87,7 @@ class _SignupState extends State<Signup> {
                 ),
                 child: const TextField(
                   decoration: InputDecoration(
-                    hintText: 'maverickcrafts0@gmail.com',
+                    hintText: 'dailylancer',
                     hintStyle: TextStyle(
                         fontFamily: "RobotoMedium",
                         color: Colors.grey,
@@ -155,13 +106,13 @@ class _SignupState extends State<Signup> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
               const Row(
                 children: [
                   Text(
-                    "Phone Number * ",
+                    "Contact Person Name",
                     style: TextStyle(
                       fontFamily: "RobotoBold",
                       fontSize: 14,
@@ -188,7 +139,7 @@ class _SignupState extends State<Signup> {
                 ),
                 child: const TextField(
                   decoration: InputDecoration(
-                    hintText: '+91 ',
+                    hintText: 'Hritik Chauhan',
                     hintStyle: TextStyle(
                         fontFamily: "RobotoMedium",
                         color: Colors.grey,
@@ -207,8 +158,216 @@ class _SignupState extends State<Signup> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              const Row(
+                children: [
+                  Text(
+                    "Official Email",
+                    style: TextStyle(
+                      fontFamily: "RobotoBold",
+                      fontSize: 14,
+                      color: Color(0xff0d0140),
+                      height: 16 / 12,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
+              ),
               const SizedBox(
-                height: 20,
+                height: 8,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xff99ABC6).withOpacity(0.18),
+                      spreadRadius: 0,
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: const TextField(
+                  decoration: InputDecoration(
+                    hintText: 'maverickcrafts@gmail.com ',
+                    hintStyle: TextStyle(
+                        fontFamily: "RobotoMedium",
+                        color: Colors.grey,
+                        fontSize: 14.0),
+                    labelStyle: TextStyle(color: Color(0xff6E678C)),
+                    filled: true,
+                    fillColor: Colors.white,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              const Row(
+                children: [
+                  Text(
+                    "Official Contact Number",
+                    style: TextStyle(
+                      fontFamily: "RobotoBold",
+                      fontSize: 14,
+                      color: Color(0xff0d0140),
+                      height: 16 / 12,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xff99ABC6).withOpacity(0.18),
+                      spreadRadius: 0,
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: const TextField(
+                  decoration: InputDecoration(
+                    hintText: '1234567890',
+                    hintStyle: TextStyle(
+                        fontFamily: "RobotoMedium",
+                        color: Colors.grey,
+                        fontSize: 14.0),
+                    labelStyle: TextStyle(color: Color(0xff6E678C)),
+                    filled: true,
+                    fillColor: Colors.white,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              const Row(
+                children: [
+                  Text(
+                    "Contact Person Job Profile",
+                    style: TextStyle(
+                      fontFamily: "RobotoBold",
+                      fontSize: 14,
+                      color: Color(0xff0d0140),
+                      height: 16 / 12,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xff99ABC6).withOpacity(0.18),
+                      spreadRadius: 0,
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: const TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Assistant Manager',
+                    hintStyle: TextStyle(
+                        fontFamily: "RobotoMedium",
+                        color: Colors.grey,
+                        fontSize: 14.0),
+                    labelStyle: TextStyle(color: Color(0xff6E678C)),
+                    filled: true,
+                    fillColor: Colors.white,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
+              ),
+              const Row(
+                children: [
+                  Text(
+                    "Company Website (Optional)",
+                    style: TextStyle(
+                      fontFamily: "RobotoBold",
+                      fontSize: 14,
+                      color: Color(0xff0d0140),
+                      height: 16 / 12,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xff99ABC6).withOpacity(0.18),
+                      spreadRadius: 0,
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
+                    ),
+                  ],
+                ),
+                child: const TextField(
+                  decoration: InputDecoration(
+                    hintText: 'www.dailylancer.in',
+                    hintStyle: TextStyle(
+                        fontFamily: "RobotoMedium",
+                        color: Colors.grey,
+                        fontSize: 14.0),
+                    labelStyle: TextStyle(color: Color(0xff6E678C)),
+                    filled: true,
+                    fillColor: Colors.white,
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
               const Row(
                 children: [
@@ -238,88 +397,102 @@ class _SignupState extends State<Signup> {
                     ),
                   ],
                 ),
-                child: TextField(
-                  obscureText: _isObscured,
+                child: const TextField(
                   decoration: InputDecoration(
-                    hintText: 'maverickcrafts0',
-                    hintStyle: const TextStyle(
+                    hintText: 'null',
+                    hintStyle: TextStyle(
                         fontFamily: "RobotoMedium",
                         color: Colors.grey,
                         fontSize: 14.0),
-                    labelStyle: const TextStyle(color: Color(0xff6E678C)),
+                    labelStyle: TextStyle(color: Color(0xff6E678C)),
                     filled: true,
-                    suffixIcon: GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          _isObscured = !_isObscured;
-                        });
-                      },
-                      child: Icon(
-                        _isObscured
-                            ? Icons.visibility_off_outlined
-                            : Icons.remove_red_eye_outlined,
-                        color: Colors.grey,
-                      ),
-                    ),
                     fillColor: Colors.white,
-                    enabledBorder: const OutlineInputBorder(
+                    enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
-                    focusedBorder: const OutlineInputBorder(
+                    focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       borderSide: BorderSide(color: Colors.white),
                     ),
                   ),
                 ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.03,
               ),
               const SizedBox(
                 height: 25,
               ),
-              Row(children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      // Toggle between two colors
-                      _isColorChanged = !_isColorChanged;
-                    });
-                  },
-                  child: Container(
-                    height: 24,
-                    width: 24,
-                    decoration: BoxDecoration(
-                      color: _isColorChanged
-                          ? const Color(0xffFFD6AD)
-                          : Color.fromARGB(65, 170, 166, 185),
-                      borderRadius: const BorderRadius.all(Radius.circular(5)),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          // Toggle between two colors
+                          _isColorChanged = !_isColorChanged;
+                        });
+                      },
+                      child: Container(
+                        height: 24,
+                        width: 24,
+                        decoration: BoxDecoration(
+                          color: _isColorChanged
+                              ? const Color(0xffFFD6AD)
+                              : const Color.fromARGB(65, 170, 166, 185),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(5)),
+                        ),
+                      ),
                     ),
-                  ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    const Text(
+                      "Remember me",
+                      style: TextStyle(
+                        fontFamily: "RobotoRegular",
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xffaaa6b9),
+                        height: 16 / 12,
+                      ),
+                      textAlign: TextAlign.left,
+                    )
+                  ],
                 ),
-                const SizedBox(
-                  width: 20,
-                ),
-                const Text(
-                  "Remember me",
-                  style: TextStyle(
-                    fontFamily: "RobotoRegular",
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                    color: Color(0xffaaa6b9),
-                    height: 16 / 12,
-                  ),
-                  textAlign: TextAlign.left,
-                )
+                // GestureDetector(
+                //   onTap: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(
+                //           builder: (context) =>
+                //               const forgot()), // Replace SecondPage with the actual widget representing the second page
+                //     );
+                //   },
+                //   child: const Text(
+                //     "Forgot Password ?",
+                //     style: TextStyle(
+                //       fontFamily: "RobotoRegular",
+                //       fontSize: 12,
+                //       color: Color(0xff0d0140),
+                //       height: 16 / 12,
+                //     ),
+                //     textAlign: TextAlign.left,
+                //   ),
+                // )
               ]),
               const SizedBox(
                 height: 25,
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            const BotNav()), // Replace NextPage with your desired page
+                            Home()), // Replace SecondPage with the actual widget representing the second page
                   );
                 },
                 child: Container(
@@ -353,74 +526,30 @@ class _SignupState extends State<Signup> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                width: 264,
-                height: 50,
-                child: Stack(
-                  children: [
-                    Positioned(
-                      left: 0,
-                      top: 0,
-                      child: Container(
-                        width: 264,
-                        height: 50,
-                        decoration: ShapeDecoration(
-                          color: const Color(0xFFFED5AD),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(6)),
-                        ),
-                      ),
-                    ),
-                    const Positioned(
-                      left: 60,
-                      top: 17,
-                      child: SizedBox(
-                        width: 179,
-                        child: Text(
-                          'SIGN UP WITH GOOGLE',
-                          style: TextStyle(
-                            color: Color(0xFF130160),
-                            fontSize: 14,
-                            fontFamily: 'RobotoBold',
-                            fontWeight: FontWeight.w700,
-                            height: 0,
-                            letterSpacing: 0.84,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                        left: 33.87,
-                        top: 15,
-                        child: Image.asset('assets/google.png')),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "You don't have an account yet?  ",
+                    "Already Have An Account?",
                     style: TextStyle(
                       color: Color(0xFF514A6B),
                       fontSize: 12,
                       fontFamily: 'RobotoRegular',
+                      fontWeight: FontWeight.w400,
                       height: 0,
                     ),
                   ),
+                  SizedBox(width: 5.0),
                   GestureDetector(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                const Login()), // Replace SecondPage with the actual widget representing the second page
+                                const JpLogin()), // Replace SecondPage with the actual widget representing the second page
                       );
                     },
                     child: const Text(
@@ -429,6 +558,7 @@ class _SignupState extends State<Signup> {
                         color: Color(0xFFFF9228),
                         fontSize: 12,
                         fontFamily: 'RobotoRegular',
+                        fontWeight: FontWeight.w400,
                         decoration: TextDecoration.underline,
                         decorationColor: Color(0xFFFF9228),
                         height: 0,
